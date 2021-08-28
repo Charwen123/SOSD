@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <input type="text" id="result">
+            <div class="keys">
+                <ul>
+                    <li class="op" onclick="clear()">C</li>
+                    <li class="op" onclick="cal('/')">÷</li>
+                    <li class="op" onclick="cal('*')">×</li>
+                    <li class="op" onclick="back()">&lt;-</li>
+                    <li onclick="cal('7')">7</li>
+                    <li onclick="cal('8')">8</li>
+                    <li onclick="cal('9')">9</li>
+                    <li class="op" onclick="cal('-')">-</li>
+                    <li onclick="cal('4')">4</li>
+                    <li onclick="cal('5')">5</li>
+                    <li onclick="cal('6')">6</li>
+                    <li class="op" onclick="cal('+')">+</li>
+                </ul>
+                <div class="left">
+                    <ul>
+                        <li onclick="cal('1')">1</li>
+                        <li onclick="cal('2')">2</li>
+                        <li onclick="cal('3')">3</li>
+                        <li></li>
+                        <li onclick="cal('0')">0</li>
+                        <li class="op" onclick="cal('.')">.</li>
+                    </ul>
+                </div>
+                <div class="right op" onclick="equal()">
+                    =
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calcu.js"></script>
+</body>
+
+</html>

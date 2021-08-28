@@ -30,7 +30,6 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(50px);
 }
 
 .header-left {
@@ -61,6 +60,7 @@ a {
     -webkit-background-image: linear-gradient(90deg, #134664, #1e90ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 
 .logo {
@@ -278,14 +278,71 @@ a {
     margin-top: 8px;
 }
 
-.contents {
+.contents,
+.contents-focus {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 700px;
     margin: 35px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+}
+
+.contents-focus ul {
+    position: absolute;
+    width: 600%;
+    height: 700px;
+}
+
+.contents-focus ul li {
+    float: left;
+    right: 0;
+}
+
+.contents-focus ul li a img {
+    height: 700px;
+    width: 1280px;
+}
+
+.arrow-l,
+.arrow-r {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 24px;
+    height: 40px;
+    background: rgba(0, 0, 0, .3);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.circle {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+}
+
+.circle li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.current {
+    background-color: #fff;
 }
 
 .text {
@@ -370,11 +427,6 @@ a {
     line-height: 2;
 }
 
-.people {
-    width: 100%;
-    height: auto;
-}
-
 .footer {
     margin: 75px 0;
     padding: 35px 0;
@@ -404,7 +456,7 @@ a {
     position: relative;
     width: 100%;
     height: auto;
-    padding: 15px;
+    padding: 35px;
     background: #1a3249;
     box-sizing: border-box;
 }
