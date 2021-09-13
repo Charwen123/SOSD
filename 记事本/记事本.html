@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记事本</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section id="app" class="w">
+        <!-- 标题 -->
+        <div class="header">
+            <h1>记事本</h1>
+            <input type="text" v-model="input" @keyup.enter="add" autofocus="autofocus" autocomplete="off" placeholder="请输入" class="todo">
+        </div>
+        <!-- 内容 -->
+        <div class="container">
+            <ul>
+                <li v-for="(item,index) in list">
+                    <div class="show">
+                        <span class="index">{{index+1}}.</span>
+                        <label>{{item}}</label>
+                        <button class="del" @click="remove(index)">&times;</button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="footer">
+            <span class="all">
+                共计{{list.length}}条笔记
+            </span>
+            <button class="clear" @click="clear">清除</button>
+        </div>
+    </section>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                list: [],
+                input: "",
+                index: 0
+
+            },
+            methods: {
+                add: function() {
+                    if (this.input == "") {
+                        alert("错误，输入内容为空")
+                    } else {
+                        this.list.push(this.input)
+                        this.input = ""
+                    }
+                },
+                remove: function(index) {
+                    this.list.splice(index, 1);
+                },
+                clear: function() {
+                    this.list = [];
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
