@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="JavaScript/index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="" class="img-responsive center-block">
+            </div>
+            <div class="banner">
+                <div class="title">
+                    <h3>大宝贝助手</h3>
+                </div>
+                <div class="file">
+                    <a href="javascript:;">选择要上传的文件</a>
+                    <img src="" alt="" id="img">
+                </div>
+                <span class="custom-file">
+                    <!-- 用按钮覆盖丑陋的表单按钮 -->
+                    <button class="btn btn-info" style="background-color: #60a9c1;">选择文件</button>
+                    <input type="file" class="input-file" multiple="multiple" />
+                </span>
+                <button id="btnUpload" class="btn btn-success" style="background-color: #5ac189;">上传文件</button>
+                <!-- bootstrap进度条固定格式：div.progress -> div.progress-bar 
+                    style的width是默认进度-->
+                <div class=" progress ">
+                    <div class="progress-bar " role="progressbar " aria-valuenow="0 " aria-valuemin="0 " aria-valuemax="100 " style="width: 0%; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
